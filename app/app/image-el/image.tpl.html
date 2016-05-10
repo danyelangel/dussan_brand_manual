@@ -1,0 +1,36 @@
+<div class="thumbnail"
+     ng-mouseenter="hover=true"
+     ng-mouseleave="hover=false"
+     ng-class="{edit: hover && !$ctrl.wcState.preview}">
+  
+  <img ng-src="{{$ctrl.wcData.httpsURL}}"
+       ng-if="$ctrl.wcData"
+       alt="">
+  
+  <md-progress-circular md-mode="indeterminate" 
+                        ng-if="!$ctrl.wcData">
+  </md-progress-circular>
+  
+  <div class="edit-controls"
+       ng-if="!$ctrl.wcState.preview"
+       ng-class="{show: hover && !$ctrl.wcState.preview}"
+       ng-style="{color: $ctrl.display.styles.color}">
+    <md-button class="md-icon-button"
+               ng-if="$ctrl.wcData"
+               ngf-select="$ctrl.update($file)"
+               ngf-multiple="false"
+               accept="image/*"
+               ngf-resize="{width: $ctrl.maxSize, 
+                       height: $ctrl.maxSize}">
+      <i class="material-icons">image</i>
+      <md-tooltip>Update</md-tooltip>
+    </md-button>
+    <md-button class="md-icon-button"
+               ng-if="$ctrl.wcData"
+               ng-click="$ctrl.remove()">
+      <i class="material-icons">delete</i>
+      <md-tooltip>Delete</md-tooltip>
+    </md-button>
+  </div>
+  
+</div>

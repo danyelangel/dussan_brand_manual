@@ -1,0 +1,9 @@
+{
+  "firebase": "dussan",
+  "public": "build/app",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

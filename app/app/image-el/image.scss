@@ -1,0 +1,24 @@
+.thumbnail {
+  position: relative;
+  min-height: 96px;
+}
+.thumbnail.edit {
+  background: rgba(0, 0, 0, 0.1);
+  img {
+    margin: 0;
+    opacity: 0.5;
+  }
+}
+.thumbnail {
+  md-progress-circular {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+  }
+  img {
+    width: 100%;
+    transition: opacity 0.1s;
+  }
+}
